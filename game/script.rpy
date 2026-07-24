@@ -4,6 +4,12 @@ label start:
 
     scene black
 
-    e "Hello! This is my first Ren'Py game."
+    show student
+
+    e "You are late!!!."
+
+    e "You don't know what happened."
+
+    e "Common Hikari you are the president of Detective Club."
 
     return

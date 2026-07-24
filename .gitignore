@@ -24,3 +24,18 @@
 /dialogue.tab
 /dialogue.txt
 /strings.json
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Operating System
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
