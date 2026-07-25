@@ -1,7 +1,9 @@
 ﻿define e = Character("Hikari")
+define m = Character("Taiju")
 image street="images/Scenes/Backstreet_Spring_Day.png"
 label start:
 
+    play music "bg_hiphop.mp3" volume 0.25
     scene street with fade
 
     show Hikari school backs_norm bangs_normal sclera_Spread eyes_Spread brows_angry iris_large mouth_angry
@@ -14,7 +16,15 @@ label start:
 
     e "Common..."
 
-    e "Let's get going"
+    e "Didn't you forgot about the exams."
+
+    hide Hikari
+
+    show Taiju school backs_norm bangs_normal sclera_Spread eyes_Spread brows_angry iris_large mouth_Open
+
+    m "I'm not that much mad"
+
+    hide Taiju
 
     show Hikari school backs_norm bangs_normal sclera_norm eyes_Spread brows_norm iris_medium mouth_Grin
 
@@ -23,4 +33,11 @@ label start:
     e "The day to end as a child and become an Adult."
 
     e "The Last Exam."
+
+    hide Hikari
+
+    show Taiju school backs_norm bangs_normal sclera_norm eyes_Spread brows_norm iris_medium mouth_Grin
+
+    m "I'm Excited too.."
+
     return
