@@ -16,13 +16,13 @@ layeredimage Hikari:
         attribute eyes_norm default:
             "images/eyes/Eye Type 2/Normal.png"
 
-        attribute eyes_Sorrow default:
+        attribute eyes_Sorrow:
             "images/eyes/Eye Type 2/Normal.png"
 
-        attribute eyes_Spread default:
+        attribute eyes_Spread:
             "images/eyes/Eye Type 2/Normal.png"
 
-        attribute eyes_Surprised default:
+        attribute eyes_Surprised:
             "images/eyes/Eye Type 2/Normal.png"
 
     group sclera:
@@ -42,14 +42,14 @@ layeredimage Hikari:
         attribute brows_norm default:
             "images/eyebrow/Brow Type 1/Neutro.png"
 
-        attribute brows_angry default:
+        attribute brows_angry:
             "images/eyebrow/Brow Type 1/Angry.png"
 
     group iris:
-        attribute iris_normal default:
+        attribute iris_normal:
             "images/iris/Type 1/Iris 1.png"
 
-        attribute iris_medium:
+        attribute iris_medium default:
             "images/iris/Type 2/Iris 1.png"
 
         attribute iris_large:
@@ -81,7 +81,7 @@ layeredimage Hikari:
             "images/mouth/Mouth Type 1/Grin.png"
 
         attribute mouth_Uninterested:
-            "images/mouth/Mouth Type1/Uninterested.png"
+            "images/mouth/Mouth Type 1/Uninterested.png"
 
     group backs:
         attribute backs_norm:
@@ -107,13 +107,13 @@ layeredimage Taiju:
         attribute eyes_norm default:
             "images/eyes/Eye Type 1/Normal.png"
 
-        attribute eyes_Sorrow default:
+        attribute eyes_Sorrow:
             "images/eyes/Eye Type 1/Normal.png"
 
-        attribute eyes_Spread default:
+        attribute eyes_Spread:
             "images/eyes/Eye Type 1/Normal.png"
 
-        attribute eyes_Surprised default:
+        attribute eyes_Surprised:
             "images/eyes/Eye Type 1/Normal.png"
 
     group sclera:
@@ -198,13 +198,13 @@ layeredimage Daifuko:
         attribute eyes_norm default:
             "images/eyes/Eye Type 5/Normal.png"
 
-        attribute eyes_Sorrow default:
+        attribute eyes_Sorrow:
             "images/eyes/Eye Type 5/Normal.png"
 
-        attribute eyes_Spread default:
+        attribute eyes_Spread:
             "images/eyes/Eye Type 5/Normal.png"
 
-        attribute eyes_Surprised default:
+        attribute eyes_Surprised:
             "images/eyes/Eye Type 5/Normal.png"
 
     group sclera:
@@ -298,13 +298,13 @@ layeredimage Teacher:
         attribute eyes_norm default:
             "images/eyes/Eye Type 2/Normal.png"
 
-        attribute eyes_Sorrow default:
+        attribute eyes_Sorrow:
             "images/eyes/Eye Type 2/Normal.png"
 
-        attribute eyes_Spread default:
+        attribute eyes_Spread:
             "images/eyes/Eye Type 2/Normal.png"
 
-        attribute eyes_Surprised default:
+        attribute eyes_Surprised:
             "images/eyes/Eye Type 2/Normal.png"
 
     group sclera:
@@ -377,6 +377,10 @@ layeredimage Teacher:
         attribute bang_norm default:
             "images/hairs/bangs/Bangs 5/Color 1.png"
 
+    group accessories:
+        attribute necklace default:
+            "images/accessories/necklace.png"
+
 layeredimage Shiba:
     always "images/bodytype/body.png"
     always "images/face/face.png"
@@ -393,13 +397,13 @@ layeredimage Shiba:
         attribute eyes_norm default:
             "images/eyes/Eye Type 2/Normal.png"
 
-        attribute eyes_Sorrow default:
+        attribute eyes_Sorrow:
             "images/eyes/Eye Type 2/Normal.png"
 
-        attribute eyes_Spread default:
+        attribute eyes_Spread:
             "images/eyes/Eye Type 2/Normal.png"
 
-        attribute eyes_Surprised default:
+        attribute eyes_Surprised:
             "images/eyes/Eye Type 2/Normal.png"
 
     group sclera:
@@ -419,7 +423,7 @@ layeredimage Shiba:
         attribute brows_norm default:
             "images/eyebrow/Brow Type 1/Neutro.png"
 
-        attribute brows_angry default:
+        attribute brows_angry:
             "images/eyebrow/Brow Type 1/Angry.png"
 
     group iris:
@@ -468,6 +472,4 @@ layeredimage Shiba:
         attribute bang_norm default:
             "images/hairs/bangs/Bangs 8/Color 1.png"
 
-    group accessories:
-        attribute necklace default:
-            "images/accessories/necklace.png"
+    
