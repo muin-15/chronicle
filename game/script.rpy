@@ -1,10 +1,13 @@
 ﻿define e = Character("Hikari")
 define m = Character("Taiju")
 define r = Character("Daifuko")
+define t = Character("Teacher")
+define s = Character("Shiba")
 image street="images/Scenes/Backstreet_Spring_Day.png"
 label start:
 
     play music "bg_hiphop.mp3" volume 0.25 fadein 4.0
+
     scene street with fade
 
     show Hikari school bangs_normal sclera_norm eyes_Sorrow brows_angry iris_large mouth_angry
@@ -49,7 +52,25 @@ label start:
 
     e "Look who is here"
 
-    show Daifuko mouth_Uninterested
+    show Daifuko iris_large mouth_Uninterested
 
     r "Nerds..."
+
+    hide Daifuko
+
+    show Shiba
+
+    s "Be quit daifuko"
+
+    hide Shiba
+
+    show Daifuko
+
+    r "hoiiiii"
+
+    hide Daifuko
+
+    show Teacher
+
+    t "It seems like evryone is ready for the exams"
     return
