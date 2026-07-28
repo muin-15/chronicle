@@ -4,7 +4,7 @@ define r = Character("Daifuko")
 define t = Character("Teacher")
 define s = Character("Shiba")
 define n = Character(None)
-
+define y = Character("Yagamishi")
 
 define Duo_main =Character("Taiju & Hikari")
 image street="images/Scenes/Backstreet_Spring_Day.png"
@@ -15,6 +15,13 @@ image shrine ="images/Scenes/Temple_Spring_Day.png"
 
 image inside_shrine = "images/Scenes/Old_TempleDay.png"
 
+image schoolgate = "images/Scenes/11.png"
+
+image staffroom ="images/Scenes/staffroom.png"
+
+image mask = "images/accessories/mask.png"
+
+image sportsroom ="images/Scenes/sportsroom.png"
 
 default ans1=False
 
@@ -121,7 +128,10 @@ label start:
 
             m "Fine{p}Let's go Hikari."
 
-    jump gathering_at_shrine
+    call gathering_at_shrine
+
+    call inSchool
+ 
 
     return
 
@@ -275,3 +285,104 @@ label In_Shrine:
     n "Teacher goes to school."
 
     return
+label inSchool:
+
+    scene schoolgate with fade
+    show Taiju mouth_scared
+    m "10 minutes got away.{p}I guess we need to hurry up."
+    hide Taiju with Dissolve(0.5)
+
+    scene staffroom
+
+    show Taiju mouth_Open at left
+    show Hikari at right
+    with dissolve
+
+    m "Let's takeout a look."
+
+    e "I'll check the other side."
+
+    hide Taiju
+    hide Hikari
+
+    m "It seems like they didn't cleaned the staff room since we've joined in."
+
+    e "Yaa its dusty."
+
+    m "I guess I've found something..."
+
+    show Taiju at left
+    show Hikari mouth_Open at right
+
+    e "what did you get?"
+
+    show Hikari mouth_normal
+    show Taiju mouth_Open
+
+    m "A Rat trap."
+    show Hikari mouth_angry brows_angry
+
+    e "Taiju Are you kidding,We don't have time!"
+
+    show Taiju mouth_laugh
+    m "Sorry Sorry Just kidding."
+
+    e "Be serious.{p}We don't have time."
+
+    show Taiju  mouth_Open
+
+    m "Okay."
+
+    show Hikari mouth_normal
+
+    e "I guess there is nothing here let's try to find a clue somewhere else."
+
+    menu:
+        "leave Staff room":
+            e "Let's search it in Sports room.{p}"
+
+            hide Hikari
+            hide Taiju
+            call sportsroom
+        "Stay for some time":
+            hide Hikari
+            hide Taiju
+            e "Just 5 more minutes!!"
+
+            m "okay"
+
+            n "After sometime"
+
+            show Taiju mouth_Open at left
+            show Hikari at right
+            m "I guess I got something."
+            show Hikari mouth_Open
+            e "What's it?"
+            show mask
+            show Taiju mouth_Open
+            m "It's a mask."
+            show Hikari mouth_Open
+            e "Mask?"
+            m "I don't know what it is doing here.{p}But I guess we need to check out for Drama club."
+
+            e "Yaa we could find something there."
+
+            hide Taiju
+            hide Hikari
+            with Dissolve(0.5)
+            
+            call dramaclub
+
+        
+    return
+label sportsroom:
+    scene sportsroom
+    show Yamagishi
+    y "Hello"
+
+return
+
+label dramaclub:
+    scene dramaclub
+    n "store room"
+return
