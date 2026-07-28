@@ -21,16 +21,21 @@ image staffroom ="images/Scenes/staffroom.png"
 
 image mask = "images/accessories/mask.png"
 
+image hallway ="images/scenes/03.png"
+
 image sportsroom ="images/Scenes/sportsroom.png"
 
+image book = "images/greenbook.png"
+
 default ans1=False
+default evidence=0
 
 default solve_case=False
 label start:
 
     play music "bg_hiphop.mp3" volume 0.25 fadein 4.0
 
-    scene black
+    scene black with fade
 
     n "March 31st"
 
@@ -141,7 +146,7 @@ label gathering_at_shrine:
     hide Shiba 
     with Dissolve(1.0)
 
-    scene street2
+    scene street2 with fade
 
     n "All of them started walking"
 
@@ -211,7 +216,7 @@ label gathering_at_shrine:
 
     call In_Shrine
 
-    scene street2
+    scene street2 with fade
 
     show Taiju at left
     show Hikari at right
@@ -234,7 +239,7 @@ label gathering_at_shrine:
 
 label In_Shrine:
 
-    scene inside_shrine
+    scene inside_shrine with fade
 
     show Teacher
 
@@ -292,7 +297,7 @@ label inSchool:
     m "10 minutes got away.{p}I guess we need to hurry up."
     hide Taiju with Dissolve(0.5)
 
-    scene staffroom
+    scene staffroom with fade
 
     show Taiju mouth_Open at left
     show Hikari at right
@@ -370,19 +375,114 @@ label inSchool:
             hide Taiju
             hide Hikari
             with Dissolve(0.5)
+            $ evidence+=1
             
             call dramaclub
 
         
     return
 label sportsroom:
-    scene sportsroom
-    show Yamagishi
-    y "Hello"
+    scene sportsroom with fade
+    show Yamagishi mouth_Open 
+    y "Hello{p}Why are you here?{p}The graduation Ceremony is in 30 minutes."
+    hide Yamagishi
+    show Yamagishi mouth_scared at left
+    show Taiju at right
+    m "We will catch up with you later."
+    y "First that yellow haired boy and now you both are confusing me."
+    m "Yellow haired boy? Who are you talking about?"
+    y "It's someone from our class I didn't remember his name."
+    m "Why was he here?"
+    y "I don't know,he had some package in his hands."
+    m "package!?"
+    y "Something Like an award."
+    e "This is lot of evidence ,let'search for the yellow haired guy."
+    m "Yaa{p}Thanks Yagamishi."
+    y "No problem.{p}But what's the issue?"
+    m "We will tell you later."
+    hide Taiju
+    hide Yamagishi
+    scene hallway with fade
+    show Hikari
+    e "There are many people with yellow hairs in our class."
+    m "Yaa"
+    hide Hikari
+    show Daifuko
+    r "Nerds"
+    hide Daifuko
+    show Hikari mouth_Open at right
+    show Taiju at left
+    e "He have yellow hairs."
+    show Taiju mouth_Open
+    m "Yaa he could be one."
+    e "He have something in his hands"
+    hide Hikari
+    hide Taiju
+    r "What do you want?{p}I'm late{p}I need to give this frame to Sensei."
+    m "Its not an award it's a frame."
+    n "Keeps frame away."
+    hide Taiju
+    hide Hikari
+    show Daifuko with dissolve
+    r "Do you two need something?"
+    Duo_main "No{p}You can do your Job."
+    r "Weird"
+    n "Daifuko leaves."
+    hide Daifuko
+    show Taiju at left
+    show Hikari at right
+    e "We are back to zero and we don't have much time."
+    m "I don't know what to do?{p}but we can't just sit."
+    n "Both Wanders through the hallway."
+    e "Taiju come here."
+    m "What is it?"
+    e "I found a book behind the door of chemistry class."
+    m "Where is it?"
+    e "Here,look!!"
+    show book
+    hide Taiju
+    hide Hikari
+    n "Hikari opened the book"
+    e "It's a diary."
+    n "Hikari reads the book."
+    e "On 30th march - I got up my dream,the Academic award."
+    show Taiju sclera_Surprised eyes_Surprised iris_large mouth_happy
+    m "That's what we want!"
+    hide Taiju
+    show Taiju
+    m "Check for the Name."
+    e "It doesn't have any name."
+    m "We are this much close."
+    e "Let's give this to Sensei and ask if they know anything about it."
+    scene black with fade
+    scene auditorium with fade
+    show Teacher
+    t "Did you got anything?"
+    hide Teacher with Dissolve(0.2)
+    show Taiju
+    m "Sir we got this."
+    hide Taiju
+    show Teacher
+    t "Diary?"
+    hide Teacher with Dissolve(0.2)
+    show Hikari
+    e "It has written that someone stole the Award on 30th of march."
+    hide Hikari
+    show Teacher sclera_Surprised eyes_Surprised iris_large mouth_happy
+    t "What??"
+    hide Teacher
+    show Taiju mouth_scared
+    m "But there is not any name on the diary still"
+    hide Taiju
+    show Teacher mouth_Open
+    t "But we still have a chance ,I'll make an annoucement the culprit will show unexpected expression."
+    Duo_main "We will gather everyone."
+    $ evidence+=1
 
 return
 
 label dramaclub:
-    scene dramaclub
-    n "store room"
+    scene dramaclub with fade
+    n "Drama Club"
+    $ evidence+=1
 return
