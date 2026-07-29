@@ -47,13 +47,13 @@ label start:
 
     show Hikari school bangs_normal sclera_norm eyes_Sorrow brows_angry iris_large mouth_angry at left with move
 
-    e "You are late!!!."
+    e "You're late!!!."
 
-    e "Atleast you could have came early for the graduation ceremony"
+    e "At least you could have come early for the graduation ceremony"
 
     show Taiju school bangs_normal eyes_Sorrow brows_angry iris_large mouth_Open at right with move
 
-    m "Common, I'm in time."
+    m "Come mon, I'm in time."
 
     show Hikari school bangs_normal sclera_norm eyes_Spread brows_norm iris_medium mouth_Grin at left
 
@@ -69,7 +69,7 @@ label start:
 
     e "The day to end as a child and become an Adult."
 
-    m "I'm gonna miss this days"
+    m "I'm gonna miss these days"
 
     e "Yaa "
 
@@ -104,7 +104,7 @@ label start:
     r "hoiiiii"
 
     show Shiba mouth_Open at left
-    s "You are late we have been waiting for you"
+    s "You're late we have been waiting for you"
     show Shiba at left
 
     hide Daifuko
@@ -197,7 +197,7 @@ label gathering_at_shrine:
     show Taiju mouth_scared at right
     with dissolve
 
-    m "Sensei whats the matter{p}Why did you called us suddenlly{p}We didn't did anything wrong!"
+    m "Sensei whats the matter{p}Why did you called us suddenly{p}We didn't do anything wrong!"
     e "We were just getting to school for the Graduation Ceremony."
 
     hide Hikari
@@ -258,7 +258,7 @@ label In_Shrine:
 
     t "From some students I've heard that you were in charge of the Detective club and you've solved some astonishing cases."
 
-    t "So I want you two to Fund it out before it gets too late.{p}It's not an order it's a request."
+    t "So I want you two to Find it out before it gets too late.{p}It's not an order it's a request."
 
     hide Teacher
     show Hikari at left
@@ -304,7 +304,7 @@ label inSchool:
     show Hikari at right
     with dissolve
 
-    m "Let's takeout a look."
+    m "Let's take a look."
 
     e "I'll check the other side."
 
@@ -422,7 +422,7 @@ label sportsroom:
     hide Taiju
     r "What do you want?{p}I'm late{p}I need to give this frame to Sensei in the Auditorium."
     m "Its not an award it's a frame."
-    n "Keeps frame away."
+    n "He puts the frame aside."
     hide Taiju
     hide Hikari
     show Daifuko with dissolve
@@ -513,7 +513,7 @@ label sportsroom:
     e "I didn't told you one thing earlier the diary had a school badge on it just like the library books."
     hide Hikari
     show Taiju
-    m "Let's get to library.we could definitly get something there."
+    m "Let's get to library.we could definitely get something there."
     hide Taiju
     show Hikari
     e "You are right"
@@ -525,7 +525,54 @@ return
 label dramaclub:
     scene dramaclub with fade
     n "Drama Club"
+    show Taiju mouth_Open at left
+    show Hikari at left
+    m "There is no one here."
+    show Hikari mouth_Open
+    e "Isn't it obvious?"
+    m "Let's search for any clue."
+    e "The biggest clue we have got is the Mask in the staff room."
+    m "I guess we should checkout for among the costumes and drama stuff so we could get some more clue."
+    e "Ok Sir."
+    m "Let's start"
+    hide Taiju
+    hide Hikari
+    with dissolve 
+    scene black with fade
+    n "Both starts searching"
+    scene dramaclub with fade
+    show Taiju mouth_Open at left
+    show Hikari mouth_Open at right
+    e "I guess I found something."
+    m "What is it?"
+    show Hikari mouth_laugh 
+    e "April fool"
+    show Taiju mouth_angry brows_angry
+    m "Hikariii , I'll kill you if you had another joke this time."
+    show Hikari mouth_normal
+    e "Sorry Sorry"
+    m "We don't have time be serious."
+    show Taiju mouth_normal brows_norm
+    renpy.pause(2.0)
+    e "Hey look I got something?"
+    m "If it is not worthy then you are gonna pay."
+    e "It's a letter."
+    n "Hikari reads out the letter."
+    e "Dear Sensei,{p}It's my last year and I want to get the Academic award as I contributed in all types of activities more than anyone else in the school."
+    e "I got good grades through all these years and built the best sports club ever."
+    e "I guess you will check out for my request."
+    e "Daifuko Machino"
+    e "What do you think?"
+    m "Is there any date over this?"
+    e "Nope"
+    m "So we have got a lead against Daifuko."
+    e "what should we do?"
+    m "Let's get to the sports room."
+    e "Let's go!"
+    scene black with fade
+    n "Both goes to Sports room."
     $ evidence+=1
+    call newSports
 return
 
 
@@ -556,6 +603,51 @@ label library:
     hide Taiju
     hide Hikari
     $ evidence +=1
+
+return
+
+label newSports:
+    scene sportsroom
+    show Yamagishi book
+    y "What're you doing here?"
+    y "The Graduation Cereony is just in 20 minutes."
+    hide Yagamishi
+    show Yagamishi at left
+    show Taiju at right
+    with dissolve
+    m "uhm nothing."
+    m "We are just looking for daifuko."
+    y "Daifuko? I don't know"
+    y "But there was a guy here a few minutes ago."
+    y "A blonde haired guy."
+    m "Yes that boy?"
+    m "Do you know where he is now?"
+    y "I don't know."
+    y "But he was carrying some type of package in his hands."
+    m "Package huhh!"
+    m "That was great.Thanks for your help."
+    y "This is all I know."
+    y "But why are you guys looking for him."
+    e "It's ..."
+    m "Nothing we will catch up with you later."
+    hide Yamagishi
+    hide Taiju
+    with dissolve
+    n "Taiju and Hikari leaves the Sports room."
+    scene black with fade
+    scene hallway with with fade
+    show Taiju mouth_Open at left
+    show Hikari mouth_Open at right
+    with dissolve
+    m "Don't spread the Award stolen news."
+    e "I just want to clarify."
+    m "You can't at this movement."
+    e "ahhh..."
+    hide Taiju
+    hide Hikari
+    show Daifuko
+    r "Nerds"
+    m "We have got our prey."
 
 return
 
@@ -625,19 +717,20 @@ label end:
         jump Graduation_Ceremony
 return
 
+
 label Graduation_Ceremony:
     scene auditorium
-    n "Princpal : And know the movement everyone is waiting for - The Academic award.The Academic award is used to given to some other student based on it's studies but now it is used to be given to an unexpecited student."
+    n "Princpal : And now the movement everyone is waiting for - The Academic award.The Academic award is used to given to some other student based on it's studies but now it is used to be given to an unexpecited student."
     n "Taiju Karuma"
-    n "Applause from the crowd"
+    n "Applause from the crowd."
     show Taiju mouth_laugh
     m "Me but how"
     hide Taiju
     n "It's was suggested on a special request from the whole staff."
-    n "taiju gets up on the stage"
+    n "Taiju gets up on the stage"
     n "Principal whispers in ear : You saved the reputation of our school."
     n "Everyone celebrates the graduation ceremony."
-    n "Students got emotional and started to wish good luck to each other for future carrier."
+    n "Students got emotional and started to wish good luck to each other for future careers."
     n "Graduation Ceremony Ends."
     n "Daifuko got problems dealing with the teacher for getting a good college."
     scene black with fade
