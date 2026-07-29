@@ -228,10 +228,10 @@ layeredimage Daifuko:
             "images/eyebrow/Brow Type 2/Angry.png"
 
     group iris:
-        attribute iris_normal default:
+        attribute iris_normal:
             "images/iris/Type 1/Iris 7.png"
 
-        attribute iris_medium:
+        attribute iris_medium default:
             "images/iris/Type 2/Iris 7.png"
 
         attribute iris_large:
@@ -326,6 +326,9 @@ layeredimage Teacher:
 
         attribute brows_angry:
             "images/eyebrow/Brow Type 1/Angry.png"
+
+        attribute brows_sad:
+            "images/eyebrow/Brow Type 1/Sad.png"
 
     group iris:
         attribute iris_normal:

@@ -136,7 +136,8 @@ label start:
     call gathering_at_shrine
 
     call inSchool
- 
+    if evidence == 2 or evidence == 3:
+        call end
 
     return
 
@@ -349,6 +350,7 @@ label inSchool:
             hide Hikari
             hide Taiju
             call sportsroom
+            call library
         "Stay for some time":
             hide Hikari
             hide Taiju
@@ -418,7 +420,7 @@ label sportsroom:
     e "He have something in his hands"
     hide Hikari
     hide Taiju
-    r "What do you want?{p}I'm late{p}I need to give this frame to Sensei."
+    r "What do you want?{p}I'm late{p}I need to give this frame to Sensei in the Auditorium."
     m "Its not an award it's a frame."
     n "Keeps frame away."
     hide Taiju
@@ -433,7 +435,11 @@ label sportsroom:
     show Hikari at right
     e "We are back to zero and we don't have much time."
     m "I don't know what to do?{p}but we can't just sit."
+    hide Taiju
+    hide Hikari
     n "Both Wanders through the hallway."
+    show Taiju at left
+    show Hikari at right
     e "Taiju come here."
     m "What is it?"
     e "I found a book behind the door of chemistry class."
@@ -455,7 +461,7 @@ label sportsroom:
     m "We are this much close."
     e "Let's give this to Sensei and ask if they know anything about it."
     scene black with fade
-    scene auditorium with fade
+    scene classroom with fade
     show Teacher
     t "Did you got anything?"
     hide Teacher with Dissolve(0.2)
@@ -475,8 +481,43 @@ label sportsroom:
     m "But there is not any name on the diary still"
     hide Taiju
     show Teacher mouth_Open
-    t "But we still have a chance ,I'll make an annoucement the culprit will show unexpected expression."
+    t "But we still have a chance ,I'll make a false annoucement the culprit will show unexpected expression."
     Duo_main "We will gather everyone."
+    t "hurry up we don't have much time."
+    hide Teacher
+    n "Hikari and Taiju gather up the students."
+    n "15 minutes to the Graduation Ceremony."
+    show Teacher mouth_Open
+    t "Students Listen up to me!{p}Some students found a lost diary in school.If someones diary is missing please contact me."
+    hide Teacher
+    show Hikari at left 
+    show Taiju at right
+    e "Do you got anything suspicious?"
+    m "I don't think so."
+    t "Did you got anything?"
+    Duo_main "We don't think so"
+    show Taiju mouth_scared
+    m "what now sensei?"
+    hide Taiju
+    hide Hikari
+    show Teacher mouth_scared
+    t "I don't think we could do anything now.{p}I guess I'll be expelled now."
+    hide Teacher
+    n "Teacher leaves the classroom."
+    show Taiju
+    m "I guess we should do something or sensei would be expelled."
+    hide Taiju
+    show Hikari
+    e "You are right."
+    e "But what can we do?"
+    e "I didn't told you one thing earlier the diary had a school badge on it just like the library books."
+    hide Hikari
+    show Taiju
+    m "Let's get to library.we could definitly get something there."
+    hide Taiju
+    show Hikari
+    e "You are right"
+    hide Hikari
     $ evidence+=1
 
 return
@@ -485,4 +526,125 @@ label dramaclub:
     scene dramaclub with fade
     n "Drama Club"
     $ evidence+=1
+return
+
+
+label library:
+    scene library with fade
+    show Taiju at left
+    show Hikari at right
+    with dissolve
+    
+    m "let's checkout the registered books."
+    $ renpy.pause(2.0,hard=True)
+    e "Look the same diary is here."
+    show Taiju mouth_Open
+    m "Here the name is Kakashi."
+    e "Isn't kakashi is the second name of our sports teacher."
+    m "Look there are more here."
+    m "Like 20 diaries."
+    e "Let's check up all of them."
+    hide Taiju
+    scene black with fade
+    scene library with fade
+    show Taiju mouth_Open at left 
+    show Hikari at right
+    m "So among 22 teachers we have got diaries for 21 teachers."
+    show Hikari mouth_Open
+    e "So we have got the culprit."
+    m "Yes."
+    hide Taiju
+    hide Hikari
+    $ evidence +=1
+
+return
+
+label end:
+    scene auditorium
+    n "The Graduation Ceremony Begins."
+    n "Principal's speech starts."
+    show Taiju at left
+    show Hikari at right
+    with dissolve
+    m "Hikari look sensei's face got pale."
+    e "Let's get the culprit and make him pay for everything he did."
+    m "Wait sensei is coming our way."
+    hide Hikari
+    hide Taiju
+    show Teacher mouth_scared brows_sad
+    t "I guess I'm gonna get insulted in front of everyone and expelled from the school."
+    hide Teacher
+    show Taiju mouth_Open at left
+    show Teacher at right
+    m "Don't worry sensei I guess we have found the culprit."
+    hide Taiju
+    show Teacher mouth_happy
+    t "Really! who is it?{p}I'll suspend him right now."
+    hide Teacher
+    menu:
+        "Teacher":
+            n "Sensei is innocent"
+            jump TragicEnd
+        "Daifuko":
+            if evidence == 2:
+                n "The culprit is Daifuko"
+            else:
+                jump TragicEnd
+        "Yagamishi":
+            if evidence == 3:
+                n "The culprit is Yagamishi"
+            else:
+                jump TragicEnd
+        "Shiba":
+            n "Shiba is innocent"
+            jump TragicEnd
+            
+    if evidence == 2 or evidence ==3:
+        m "The clues we got are:"
+        show Taiju mouth_Open
+        if evidence==2:
+            m "1.Daifuko was in sports room before the ceremony, stated by Yagamishi."
+            m "2.When you were in class he was taking some frame like thing to Ground floor,and he was saying that sensei asked me to bring it out."
+            m "3.When we found out the diary,Daifuko was there, before sometime."
+            m "4.He knew Sensei will assign us the job to get the culprit so he came up to pick up us today with shiba knowing shiba is your favourite student.Having minimal risk."
+            m "5.He knew that we are trying to get the culprit so distract us from him he stoled the diary and teared up the first page of it and put it on purpose at back of chemistry class's door."
+            m "So I think Daifuko is the culprit behind this."
+            hide Taiju
+            show Teacher mouth_Open
+            t "I didn't ask him to bring anything found.That's great."
+            show Teacher mouth_laugh
+            t "You guys gonna have a treat after the ceremony."
+            Duo_main "Yaay! Thanks."
+            hide Teacher
+            scene black with fade
+            n "Daifuko get caught"
+            n "He said he did this because sensei didn't gave high score in the Finals."
+
+        else:
+            m "1.What he was doing in the sports room in sports uniform before the Graduation Ceremony."
+        jump Graduation_Ceremony
+return
+
+label Graduation_Ceremony:
+    scene auditorium
+    n "Princpal : And know the movement everyone is waiting for - The Academic award.The Academic award is used to given to some other student based on it's studies but now it is used to be given to an unexpecited student."
+    n "Taiju Karuma"
+    n "Applause from the crowd"
+    show Taiju mouth_laugh
+    m "Me but how"
+    hide Taiju
+    n "It's was suggested on a special request from the whole staff."
+    n "taiju gets up on the stage"
+    n "Principal whispers in ear : You saved the reputation of our school."
+    n "Everyone celebrates the graduation ceremony."
+    n "Students got emotional and started to wish good luck to each other for future carrier."
+    n "Graduation Ceremony Ends."
+    n "Daifuko got problems dealing with the teacher for getting a good college."
+    scene black with fade
+return
+label TragicEnd:
+    scene black with fade
+    n "You messed up!!!"
+    show Teacher mouth_scared brows_sad eyes_Spread sclera_Spread iris_small
+    n "Sensei got fired!!!"
 return
