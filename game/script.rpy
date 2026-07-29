@@ -27,6 +27,14 @@ image sportsroom ="images/Scenes/sportsroom.png"
 
 image book = "images/greenbook.png"
 
+image storeroom ="images/Scenes/storeroom.png"
+
+image letter ="images/letter.png"
+image lr="images/letter.png"
+image lf="images/letter.png"
+
+image paper="images/paper.png"
+
 default ans1=False
 default evidence=0
 
@@ -53,7 +61,7 @@ label start:
 
     show Taiju school bangs_normal eyes_Sorrow brows_angry iris_large mouth_Open at right with move
 
-    m "Come mon, I'm in time."
+    m "Come on, I'm in time."
 
     show Hikari school bangs_normal sclera_norm eyes_Spread brows_norm iris_medium mouth_Grin at left
 
@@ -244,7 +252,7 @@ label In_Shrine:
 
     show Teacher
 
-    t "Now I guess no one can here us"
+    t "Now I guess no one can hear us"
 
     Duo_main  "What's the matter Sir"
 
@@ -452,6 +460,7 @@ label sportsroom:
     e "It's a diary."
     n "Hikari reads the book."
     e "On 30th march - I got up my dream,the Academic award."
+    hide book
     show Taiju sclera_Surprised eyes_Surprised iris_large mouth_happy
     m "That's what we want!"
     hide Taiju
@@ -539,7 +548,7 @@ label dramaclub:
     hide Hikari
     with dissolve 
     scene black with fade
-    n "Both starts searching"
+    n "They Both starts searching"
     scene dramaclub with fade
     show Taiju mouth_Open at left
     show Hikari mouth_Open at right
@@ -553,15 +562,21 @@ label dramaclub:
     e "Sorry Sorry"
     m "We don't have time be serious."
     show Taiju mouth_normal brows_norm
-    renpy.pause(2.0)
+    $ renpy.pause(2.0)
     e "Hey look I got something?"
     m "If it is not worthy then you are gonna pay."
+    show letter
     e "It's a letter."
     n "Hikari reads out the letter."
+    hide letter
+    hide Taiju
+    show paper at left
     e "Dear Sensei,{p}It's my last year and I want to get the Academic award as I contributed in all types of activities more than anyone else in the school."
     e "I got good grades through all these years and built the best sports club ever."
     e "I guess you will check out for my request."
     e "Daifuko Machino"
+    hide paper
+    show Taiju at left
     e "What do you think?"
     m "Is there any date over this?"
     e "Nope"
@@ -608,7 +623,7 @@ return
 
 label newSports:
     scene sportsroom
-    show Yamagishi book
+    show Yamagishi mouth_scared
     y "What're you doing here?"
     y "The Graduation Cereony is just in 20 minutes."
     hide Yagamishi
@@ -635,7 +650,7 @@ label newSports:
     with dissolve
     n "Taiju and Hikari leaves the Sports room."
     scene black with fade
-    scene hallway with with fade
+    scene hallway with fade
     show Taiju mouth_Open at left
     show Hikari mouth_Open at right
     with dissolve
@@ -647,8 +662,86 @@ label newSports:
     hide Hikari
     show Daifuko
     r "Nerds"
+    hide Daifuko
     m "We have got our prey."
-
+    r "What?"
+    show Daifuko at left
+    show Taiju mouth_Open at right
+    with dissolve
+    m "Nothing"
+    m "What are you doing here?"
+    show Daifuko mouth_Open
+    r "It's none of your business."
+    e "i guess he is confirmed to be culprit now."
+    m "I guess so."
+    m "You are in the dramaclub, right?"
+    r "Naaa"
+    r "I just play sports for some time."
+    r "but why are you asking this?"
+    m "uhm{p}Nothing"
+    r "Anyways I'm going to the ceremony."
+    hide Daifuko with dissolve
+    n "Daifuko Leaves"
+    show Hikari mouth_Open at left with dissolve
+    e "What do you think?"
+    m "I guess I've got the thief."
+    e "Really?"
+    e "I couldn't get it."
+    m "It's not straight way but kinda tricky."
+    m "I'm not sure."
+    e "then what should we do?"
+    m "I guess to get the culprit properly we need to get to closed store room."
+    e "Closed store room?"
+    e "Why?"
+    m "I'll tell you later,let's start moving there is no time to waste."
+    hide Hikari
+    hide Taiju
+    scene black with fade
+    scene storeroom with fade
+    n "The store room has no natural light which made it dusty and dark."
+    show Taiju mouth_Open at left
+    show Hikari mouth_Open at right 
+    m "Hikari checkout for the same letter you got earlier."
+    e "Why?"
+    m "Just checkout"
+    e "hayyy"
+    hide Taiju
+    hide Hikari
+    n "---"
+    show Taiju at left
+    show Hikari at right
+    e "hey got something?"
+    m "The letters"
+    hide Taiju
+    hide Hikari
+    show letter
+    show lr at right
+    show lf at left
+    e "There are three letters."
+    hide lf
+    hide lr
+    n "Hikari gives one letter to Taiju."
+    hide letter
+    show paper 
+    n "Hikari and Taiju opens the letters."
+    hide letter
+    show Taiju at left
+    show Hikari at right
+    e "Both letters are same."
+    m "Mine also."
+    e "Did you get anything?"
+    m "Yess I got the culprit."
+    e "who is it?"
+    m "I'll expose him infront for everyone."
+    e "Nice idea"
+    e "He should get ashamed of doing something like this."
+    m "Let's get to the Auditorium."
+    $ evidence +=1
+    hide Taiju
+    hide Hikari
+    with dissolve
+    scene black with fade
+    n "Taiju and Hikari leaves for the Auditorium."
 return
 
 label end:
@@ -703,17 +796,34 @@ label end:
             m "So I think Daifuko is the culprit behind this."
             hide Taiju
             show Teacher mouth_Open
-            t "I didn't ask him to bring anything found.That's great."
+            t "Superb."
             show Teacher mouth_laugh
-            t "You guys gonna have a treat after the ceremony."
+            t "You both did Great!{p}You guys gonna have a treat after the ceremony."
             Duo_main "Yaay! Thanks."
             hide Teacher
             scene black with fade
             n "Daifuko get caught"
+            n "Daifuko hands the Award to school"
             n "He said he did this because sensei didn't gave high score in the Finals."
 
         else:
             m "1.What he was doing in the sports room in sports uniform before the Graduation Ceremony."
+            m "2.When we got upto him he was scared."
+            m "3.We have been together since past three years.As a sports guy he should know everyone in the class but he said he don't know Daifuko's name."
+            m "4.The mask in the staffroom and the letter in the drama club were placed on purpose by him to avoid any interruption."
+            m "We got this confirmed when we got duplicate's of the same letter on the name of other students."
+            m "5.When we were in the sports room he never said we all should go to the graduation ceremony but he asked why are you here?"
+            hide Taiju
+            show Teacher mouth_Open
+            t "Superb"
+            show Teacher mouth_laugh
+            t "You both did Great!{p}You boys gonna have a treat after the ceremony."
+            hide Teacher
+            scene black with fade
+            n "Yagamishi get caught"
+            n "Daifuko hands the Award to school"
+            n "he said he did this because he had grudge against teacher for giving him low score in the exams"
+            n "Daifuko was the perfect person for his execution of his plan."
         jump Graduation_Ceremony
 return
 
@@ -732,12 +842,24 @@ label Graduation_Ceremony:
     n "Everyone celebrates the graduation ceremony."
     n "Students got emotional and started to wish good luck to each other for future careers."
     n "Graduation Ceremony Ends."
-    n "Daifuko got problems dealing with the teacher for getting a good college."
+    if evidence ==2:
+        n "Daifuko got problems dealing with the teacher for getting a good college."
+    else:
+        n "Yagamishi got problems dealing with the teacher for getting a good college."
     scene black with fade
+    jump THEEND
 return
 label TragicEnd:
     scene black with fade
     n "You messed up!!!"
     show Teacher mouth_scared brows_sad eyes_Spread sclera_Spread iris_small
     n "Sensei got fired!!!"
+    jump THEEND
+return
+
+label THEEND:
+    scene black
+    window hide
+    show text "{size=60}THE END{/size}" at truecenter with fade
+    $ renpy.pause(hard=True)
 return
