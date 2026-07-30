@@ -3,7 +3,7 @@ define m = Character("Taiju")
 define r = Character("Daifuko")
 define t = Character("Teacher")
 define s = Character("Shiba")
-define n = Character(None)
+define n = Character(None,what_color="#ffffcc")
 define y = Character("Yagamishi")
 
 define Duo_main =Character("Taiju & Hikari")
@@ -57,7 +57,7 @@ label start:
 
     e "You're late!!!."
 
-    e "At least you could have come early for the graduation ceremony"
+    e "At least you could have come early for the Graduation Ceremony."
 
     show Taiju school bangs_normal eyes_Sorrow brows_angry iris_large mouth_Open at right with move
 
@@ -67,17 +67,17 @@ label start:
 
     e "Anyways"
 
-    e "I'm Excited"
+    e "I'm Excited."
 
     show Taiju school bangs_normal sclera_norm eyes_Spread brows_norm iris_medium mouth_Grin at right
 
-    m "me too"
+    m "me too."
 
     show Taiju at right
 
     e "The day to end as a child and become an Adult."
 
-    m "I'm gonna miss these days"
+    m "I'm gonna miss these days."
 
     e "Yaa "
 
@@ -87,13 +87,13 @@ label start:
     hide Hikari 
     with Dissolve(1.5)
 
-    n "both walks over the street upto school."
+    n "Both walks over the street upto school."
 
-    n "footsteps arroaching......"
+    n "Footsteps approaching......"
 
     show Hikari mouth_Open at left
 
-    e "Look who is here"
+    e "Look who's here."
 
     hide Hikari with Dissolve(0.5)
 
@@ -107,12 +107,12 @@ label start:
 
     show Shiba mouth_angry at left with dissolve
 
-    s "Shut Up!"
+    s "Dai Shut Up!"
 
-    r "hoiiiii"
+    r "hoiiiii."
 
     show Shiba mouth_Open at left
-    s "You're late we have been waiting for you"
+    s "You're late we have been waiting for you."
     show Shiba at left
 
     hide Daifuko
@@ -125,7 +125,7 @@ label start:
 
     show Taiju at right
 
-    s "It's not like i wanted to be with you,sensei told me to bring you two with me."
+    s "It's not like I wanted to,Sensei told me to bring you two with me."
 
     menu:
         "Go with Shiba":
@@ -137,13 +137,24 @@ label start:
             
             m "We will not come."
 
-            s "Please come its urgent{p}I can't tell you why but its important."
+            s "I don't know.{p}But I don't think you will say no to Sensei."
 
-            m "Fine{p}Let's go Hikari."
+            m "Isn't this Blackmailing?"
+
+            s "Got any problem?{p}Then talk to Sensei."
+            hide Taiju
+            show Hikari mouth_Open at right
+
+            e "Why are you being so rude?"
+            hide Hikari
+            show Taiju mouth_Open at right
+
+            m "Fine.{p}Let's go Hikari."
 
     call gathering_at_shrine
 
     call inSchool
+
     if evidence == 2 or evidence == 3:
         call end
 
@@ -157,13 +168,13 @@ label gathering_at_shrine:
 
     scene street2 with fade
 
-    n "All of them started walking"
+    n "Taiju and Hikari joined with Shiba and Daifuko.{p}They headed towards the school."
 
-    n "\"Hikari Stops at the corner\""
+    n "\"Hikari stops at the corner\""
 
     show Hikari mouth_angry at left with dissolve
 
-    e "Isn't the School is the other way."
+    e "Isn't the School is the other way?"
 
     show Hikari mouth_normal
 
@@ -171,9 +182,11 @@ label gathering_at_shrine:
 
     s "Come with Us.{p}Sensei asked us to bring you two to the shrine."
 
+    e "Why ?"
+
     show Hikari mouth_Uninterested
 
-    e "Seems like we don't have other option."
+    m "Seems like we don't have other option."
 
     hide Shiba
     hide Hikari
@@ -189,7 +202,7 @@ label gathering_at_shrine:
 
     show Teacher mouth_Uninterested at center with dissolve
 
-    t "It looks like everyone is here."
+    t "hmm Nice"
 
     show Teacher mouth_Open at center
 
@@ -201,27 +214,29 @@ label gathering_at_shrine:
 
     n "Shiba and Daifuko Leaves the Shrine"
 
-    show Hikari mouth_scared at left
-    show Taiju mouth_scared at right
+    show Hikari mouth_scared brows_sad at left
+    show Taiju mouth_scared brows_sad at right
     with dissolve
 
-    m "Sensei whats the matter{p}Why did you called us suddenly{p}We didn't do anything wrong!"
+    m "Sensei whats the problem?{p}Why did you called us suddenly?{p}We didn't do anything wrong!"
     e "We were just getting to school for the Graduation Ceremony."
 
     hide Hikari
     hide Taiju
     show Teacher at center
-    t "You didn't did anything wrong{p}Theres a specific problem I need to discuss with you."
+    t "I thought you won't come so I said them to force you."
+    t "Sorry for that."
+    t "You didn't do anything wrong.{p}There's a specific problem I need to discuss with you."
     hide Teacher
     show Taiju mouth_Open at right
 
-    m "Us{p}but Why?"
+    m "Us?{p}but Why?"
 
-    t "You will get it soon{p}come with me."
-
-    n "All of them walk inside the shrine."
+    t "You will get it soon.{p}come with me."
 
     hide Taiju
+
+    n "All of them walk inside the shrine."
 
     call In_Shrine
 
@@ -233,7 +248,7 @@ label gathering_at_shrine:
 
     e "Where should we start from?"
 
-    m "The awards and aritifacts were been kept at the responsible teacher's desk.{p}So I guess we should first check out for staff room for evidences."
+    m "The awards and aritifacts were been kept at the responsible teacher's desk in the staff room.{p}So I guess we should first check out for staff room for evidences."
 
     e "Nice Idea."
 
@@ -241,7 +256,7 @@ label gathering_at_shrine:
     hide Taiju
     with Dissolve(0.2)
 
-    n "Going to school"
+    n "Going to school."
 
     return
 
@@ -254,19 +269,21 @@ label In_Shrine:
 
     t "Now I guess no one can hear us"
 
-    Duo_main  "What's the matter Sir"
+    Duo_main  "What's the problem Sir?"
 
-    show Teacher mouth_scared
+    show Teacher mouth_scared brows_sad
 
-    t "Actually{p}As you know today is the Graduation Ceremony{p}And at the end of the Ceremony a student gets the Academic award for its excellence throughout the three years."
+    t "Actually.{p}As you know today is the Graduation Ceremony.{p}And at the end of the Ceremony a student gets the Academic award for its excellence throughout the three years."
 
-    t "Every year one teacher gets in charge of the graduation Ceremony.{p}This year its my turn."
+    t "Every year one teacher gets in charge of the Graduation Ceremony.{p}This year its my turn."
     
-    t "but the problem is the Academic award trophy got stolen last night from the school.{p}I don't know what to do?"
+    t "But the problem is the Academic award trophy got stolen last night from the school.{p}I don't know what to do?"
+
+    t "No one know that it was stolen."
 
     t "From some students I've heard that you were in charge of the Detective club and you've solved some astonishing cases."
 
-    t "So I want you two to Find it out before it gets too late.{p}It's not an order it's a request."
+    t "So I want you two to Find it out before it gets to late.{p}It's not an order it's a request."
 
     hide Teacher
     show Hikari at left
@@ -283,13 +300,13 @@ label In_Shrine:
 
         "Don't Help Sensei":
 
-            m "Why?{p}The school is over and it's not our problem"
+            e "Why?{p}The school is over and it's not our problem"
 
             t "I get it.{p}I can't force you."
 
-            e "Stop it Taiju!{p}We will help you out Sir."
+            m "Stop it Hikari!{p}We will help you out Sir."
 
-            t "Thanks{p}But don't Forget you just have one hour."
+            t "Thanks.{p}But don't Forget you just have one hour."
 
             Duo_main "We will do our Best."
 
@@ -303,7 +320,7 @@ label inSchool:
 
     scene schoolgate with fade
     show Taiju mouth_scared
-    m "10 minutes got away.{p}I guess we need to hurry up."
+    m "10 minutes vanished.{p}I guess we need to hurry up."
     hide Taiju with Dissolve(0.5)
 
     scene staffroom with fade
@@ -347,13 +364,13 @@ label inSchool:
 
     m "Okay."
 
-    show Hikari mouth_normal
+    show Hikari mouth_normal brows_norm
 
     e "I guess there is nothing here let's try to find a clue somewhere else."
 
     menu:
         "leave Staff room":
-            e "Let's search it in Sports room.{p}"
+            e "Let's search it in the Sports room.{p}"
 
             hide Hikari
             hide Taiju
@@ -366,7 +383,7 @@ label inSchool:
 
             m "okay"
 
-            n "After sometime"
+            $ renpy.pause(2.0,hard=True)
 
             show Taiju mouth_Open at left
             show Hikari at right
@@ -378,6 +395,7 @@ label inSchool:
             m "It's a mask."
             show Hikari mouth_Open
             e "Mask?"
+            e "Cool!"
             m "I don't know what it is doing here.{p}But I guess we need to check out for Drama club."
 
             e "Yaa we could find something there."
@@ -396,17 +414,17 @@ label sportsroom:
     show Yamagishi mouth_Open 
     y "Hello{p}Why are you here?{p}The graduation Ceremony is in 30 minutes."
     hide Yamagishi
-    show Yamagishi mouth_scared at left
+    show Yamagishi mouth_scared brows_sad at left
     show Taiju at right
     m "We will catch up with you later."
-    y "First that yellow haired boy and now you both are confusing me."
-    m "Yellow haired boy? Who are you talking about?"
+    y "First that blonde haired boy and now you both are confusing me."
+    m "Blonde haired boy? Who are you talking about?"
     y "It's someone from our class I didn't remember his name."
     m "Why was he here?"
     y "I don't know,he had some package in his hands."
-    m "package!?"
-    y "Something Like an award."
-    e "This is lot of evidence ,let'search for the yellow haired guy."
+    m "Package!?"
+    y "Something square shaped thing."
+    e "This is lot of evidence ,let'search for the blonde haired guy."
     m "Yaa{p}Thanks Yagamishi."
     y "No problem.{p}But what's the issue?"
     m "We will tell you later."
@@ -414,7 +432,7 @@ label sportsroom:
     hide Yamagishi
     scene hallway with fade
     show Hikari
-    e "There are many people with yellow hairs in our class."
+    e "There are many people with blonde hairs in our class."
     m "Yaa"
     hide Hikari
     show Daifuko
@@ -422,21 +440,26 @@ label sportsroom:
     hide Daifuko
     show Hikari mouth_Open at right
     show Taiju at left
-    e "He have yellow hairs."
+    n "Hikari whispers"
+    e "He has blonde hairs."
     show Taiju mouth_Open
     m "Yaa he could be one."
-    e "He have something in his hands"
+    e "He had something in his hands"
     hide Hikari
     hide Taiju
+    show Daifuko mouth_Open
     r "What do you want?{p}I'm late{p}I need to give this frame to Sensei in the Auditorium."
+    hide Daifuko
+    show Taiju mouth_Open
     m "Its not an award it's a frame."
+    hide Taiju
     n "He puts the frame aside."
     hide Taiju
     hide Hikari
     show Daifuko with dissolve
     r "Do you two need something?"
-    Duo_main "No{p}You can do your Job."
-    r "Weird"
+    Duo_main "No{p}You can do your job."
+    r "Weirdo!"
     n "Daifuko leaves."
     hide Daifuko
     show Taiju at left
@@ -452,13 +475,14 @@ label sportsroom:
     m "What is it?"
     e "I found a book behind the door of chemistry class."
     m "Where is it?"
+    m "huh strange{p}I checked there a moment before."
     e "Here,look!!"
     show book
     hide Taiju
     hide Hikari
-    n "Hikari opened the book"
-    e "It's a diary."
-    n "Hikari reads the book."
+    e "It's a diary of the running year."
+    n "Hikari opens the Diary."
+    n "Hikari starts to read the diary."
     e "On 30th march - I got up my dream,the Academic award."
     hide book
     show Taiju sclera_Surprised eyes_Surprised iris_large mouth_happy
@@ -522,10 +546,10 @@ label sportsroom:
     e "I didn't told you one thing earlier the diary had a school badge on it just like the library books."
     hide Hikari
     show Taiju
-    m "Let's get to library.we could definitely get something there."
+    m "Let's get to library.We could definitely get something there."
     hide Taiju
     show Hikari
-    e "You are right"
+    e "You are right."
     hide Hikari
     $ evidence+=1
 
@@ -541,9 +565,9 @@ label dramaclub:
     e "Isn't it obvious?"
     m "Let's search for any clue."
     e "The biggest clue we have got is the Mask in the staff room."
-    m "I guess we should checkout for among the costumes and drama stuff so we could get some more clue."
+    m "I guess we should check among the costumes and drama stuff so we could get some more clue."
     e "Ok Sir."
-    m "Let's start"
+    m "Let's start."
     hide Taiju
     hide Hikari
     with dissolve 
@@ -582,7 +606,7 @@ label dramaclub:
     e "Nope"
     m "So we have got a lead against Daifuko."
     e "what should we do?"
-    m "Let's get to the sports room."
+    m "Let's get to the sports room he must be there."
     e "Let's go!"
     scene black with fade
     n "Both goes to Sports room."
@@ -607,11 +631,15 @@ label library:
     m "Like 20 diaries."
     e "Let's check up all of them."
     hide Taiju
+    hide Hikari
     scene black with fade
     scene library with fade
     show Taiju mouth_Open at left 
     show Hikari at right
     m "So among 22 teachers we have got diaries for 21 teachers."
+    e "It's confusing."
+    e "We just don't got diary of one teacher."
+    m "You're right."
     show Hikari mouth_Open
     e "So we have got the culprit."
     m "Yes."
@@ -623,11 +651,11 @@ return
 
 label newSports:
     scene sportsroom
-    show Yamagishi mouth_scared
+    show Yamagishi mouth_scared brows_sad
     y "What're you doing here?"
     y "The Graduation Cereony is just in 20 minutes."
-    hide Yagamishi
-    show Yagamishi at left
+    hide Yamagishi with dissolve
+    show Yamagishi at left
     show Taiju at right
     with dissolve
     m "uhm nothing."
@@ -672,12 +700,12 @@ label newSports:
     m "What are you doing here?"
     show Daifuko mouth_Open
     r "It's none of your business."
-    e "i guess he is confirmed to be culprit now."
+    e "I guess he is confirmed to be culprit now."
     m "I guess so."
     m "You are in the dramaclub, right?"
     r "Naaa"
     r "I just play sports for some time."
-    r "but why are you asking this?"
+    r "But why are you asking this?"
     m "uhm{p}Nothing"
     r "Anyways I'm going to the ceremony."
     hide Daifuko with dissolve
@@ -689,7 +717,7 @@ label newSports:
     e "I couldn't get it."
     m "It's not straight way but kinda tricky."
     m "I'm not sure."
-    e "then what should we do?"
+    e "Then what should we do?"
     m "I guess to get the culprit properly we need to get to closed store room."
     e "Closed store room?"
     e "Why?"
@@ -789,10 +817,11 @@ label end:
         show Taiju mouth_Open
         if evidence==2:
             m "1.Daifuko was in sports room before the ceremony, stated by Yagamishi."
-            m "2.When you were in class he was taking some frame like thing to Ground floor,and he was saying that sensei asked me to bring it out."
+            m "2.When you were in class he was taking some square shaped box to the ground floor,and he was saying that sensei asked me to bring it out."
             m "3.When we found out the diary,Daifuko was there, before sometime."
             m "4.He knew Sensei will assign us the job to get the culprit so he came up to pick up us today with shiba knowing shiba is your favourite student.Having minimal risk."
-            m "5.He knew that we are trying to get the culprit so distract us from him he stoled the diary and teared up the first page of it and put it on purpose at back of chemistry class's door."
+            m "5.He knew that we are trying to get the culprit so distract us from him he stole the diary and teared up the first page of it and put it on purpose at back of chemistry class's door."
+            m "6.He remained calm and quite whenever we met him like he is ignoring us."
             m "So I think Daifuko is the culprit behind this."
             hide Taiju
             show Teacher mouth_Open
@@ -804,7 +833,7 @@ label end:
             scene black with fade
             n "Daifuko get caught"
             n "Daifuko hands the Award to school"
-            n "He said he did this because sensei didn't gave high score in the Finals."
+            n "He said he did this because sensei didn't gave high score in the finals on purpose."
 
         else:
             m "1.What he was doing in the sports room in sports uniform before the Graduation Ceremony."
@@ -813,6 +842,9 @@ label end:
             m "4.The mask in the staffroom and the letter in the drama club were placed on purpose by him to avoid any interruption."
             m "We got this confirmed when we got duplicate's of the same letter on the name of other students."
             m "5.When we were in the sports room he never said we all should go to the graduation ceremony but he asked why are you here?"
+            m "6.He triggered Daifuko but daifuko was there in the morning with Shiba,Daifuko should have stayed away from us but he got into us as normal catch up."
+            m "7.Closed store room is a guess ,because many players get there to smoke."
+            
             hide Taiju
             show Teacher mouth_Open
             t "Superb"
@@ -821,8 +853,8 @@ label end:
             hide Teacher
             scene black with fade
             n "Yagamishi get caught"
-            n "Daifuko hands the Award to school"
-            n "he said he did this because he had grudge against teacher for giving him low score in the exams"
+            n "Yagamishi hands the Award to school"
+            n "He said he did this because he had grudge against teacher for giving him low score in the exams on purpose."
             n "Daifuko was the perfect person for his execution of his plan."
         jump Graduation_Ceremony
 return
@@ -834,10 +866,10 @@ label Graduation_Ceremony:
     n "Taiju Karuma"
     n "Applause from the crowd."
     show Taiju mouth_laugh
-    m "Me but how"
+    m "Me{p}but how?"
     hide Taiju
     n "It's was suggested on a special request from the whole staff."
-    n "Taiju gets up on the stage"
+    n "Taiju gets up on the stage."
     n "Principal whispers in ear : You saved the reputation of our school."
     n "Everyone celebrates the graduation ceremony."
     n "Students got emotional and started to wish good luck to each other for future careers."

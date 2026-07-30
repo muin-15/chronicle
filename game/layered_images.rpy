@@ -45,6 +45,9 @@ layeredimage Hikari:
         attribute brows_angry:
             "images/eyebrow/Brow Type 1/Angry.png"
 
+        attribute brows_sad:
+            "images/eyebrow/Brow Type 1/Sad.png"
+
     group iris:
         attribute iris_normal:
             "images/iris/Type 1/Iris 1.png"
@@ -136,6 +139,9 @@ layeredimage Taiju:
         attribute brows_angry:
             "images/eyebrow/Brow Type 1/Angry.png"
 
+        attribute brows_sad:
+            "images/eyebrow/Brow Type 1/Sad.png"
+
     group iris:
         attribute iris_normal default:
             "images/iris/Type 1/Iris 1.png"
@@ -226,6 +232,9 @@ layeredimage Daifuko:
 
         attribute brows_angry:
             "images/eyebrow/Brow Type 2/Angry.png"
+
+        attribute brows_sad:
+            "images/eyebrow/Brow Type 2/Sad.png"
 
     group iris:
         attribute iris_normal:
@@ -429,6 +438,9 @@ layeredimage Shiba:
         attribute brows_angry:
             "images/eyebrow/Brow Type 1/Angry.png"
 
+        attribute brows_sad:
+            "images/eyebrow/Brow Type 1/Sad.png"
+
     group iris:
         attribute iris_normal:
             "images/iris/Type 1/Iris 2.png"
@@ -521,6 +533,9 @@ layeredimage Yamagishi:
 
         attribute brows_angry:
             "images/eyebrow/Brow Type 1/Angry.png"
+
+        attribute bros_sad:
+            "images/eyebrow/Brow Type 1/Sad.png"
 
     group iris:
         attribute iris_normal:
