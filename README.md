@@ -39,8 +39,9 @@ No use of AI.
 |Hide Text|H|
 
 ---
-```
+
 ## Project Structure
+```
 chronicle/
 ├─ game/
 │  ├─ images/
