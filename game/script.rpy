@@ -3,7 +3,7 @@ define m = Character("Taiju")
 define r = Character("Daifuko")
 define t = Character("Teacher")
 define s = Character("Shiba")
-define n = Character(None,what_color="#ffffcc")
+define n = Character(None,what_color="#e0c2ff",what_italic=True)
 define y = Character("Yagamishi")
 
 define Duo_main =Character("Taiju & Hikari")

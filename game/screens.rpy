@@ -1186,17 +1186,25 @@ style confirm_button is gui_medium_button
 style confirm_button_text is gui_medium_button_text
 
 style confirm_frame:
-    background Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
-    padding gui.confirm_frame_borders.padding
-    xalign .5
-    yalign .5
+    background Solid("#1a0033cc")
+    xsize 600
+    ysize 300
+    xalign 0.5
+    yalign 0.5
+    padding(40,40)
 
 style confirm_prompt_text:
     textalign 0.5
     layout "subtitle"
+    color "#ffffff"
+    size 30
 
 style confirm_button:
     properties gui.button_properties("confirm_button")
+    idle_color "#b366ff"
+    hover_color "#ffffff"
+    size 35
+
 
 style confirm_button_text:
     properties gui.text_properties("confirm_button")
