@@ -4,6 +4,8 @@ Chroncile is a visual novel created using Ren'Py and python.The story line is co
 
 Chronicle contains three different endings based on how the user solves the case.It takes 30-60 minutes complete the game.
 
+No use of AI.
+
 ---
 
 ## Features
