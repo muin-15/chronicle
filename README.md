@@ -19,7 +19,9 @@ Chronicle contains three different endings based on how the user solves the case
 ## Screenshots
 
 ![First page](./game/images/screenshots/start.png)
+
 ![In-Middle](./game/images/screenshots/middle.png)
+
 ![Option page](./game/images/screenshots/twist.png)
 
 ---
@@ -53,9 +55,7 @@ chronicle/
 
 ## Download
 
-1.Go to [releases](https:github.com/muin-15/chronicle/releases) page.
-2.Download the latest release for Windows/Linux/macOS.
-3.Extract the Zip file and run the game(chronicle.exe).
+Download from [Itch.io](https:github.com/muin-15/chronicle/releases).
 
 ---
 
@@ -64,6 +64,7 @@ chronicle/
 - Scenes:[Noranekogames](https://noranekogames.itch.io/)
 - Scenes:[Itch.io](https://itch.io/queue/c/1958233/classroom-backgrounds?game_id=810438&password=)
 - Sprites:[Tainara](https://tainara-p.itch.io/male-character-sprite-creator)
+- Audio:[Pixabay](https://pixabay.com/music/search/background%20music/)
 
 ---
 

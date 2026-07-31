@@ -350,12 +350,16 @@ style navigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
+transform menu_bg:
+    blur 6
+
 screen main_menu():
 
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    add gui.main_menu_background
+    add "gui/Old_School.png" at menu_bg
+    add Solid("#1b042dd8")
 
     ## This empty frame darkens the main menu.
     frame:

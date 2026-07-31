@@ -151,12 +151,12 @@ label start:
 
             m "Fine.{p}Let's go Hikari."
 
-    call gathering_at_shrine
+    call gathering_at_shrine from _call_gathering_at_shrine
 
-    call inSchool
+    call inSchool from _call_inSchool
 
     if evidence == 2 or evidence == 3:
-        call end
+        call end from _call_end
 
     return
 
@@ -238,7 +238,7 @@ label gathering_at_shrine:
 
     n "All of them walk inside the shrine."
 
-    call In_Shrine
+    call In_Shrine from _call_In_Shrine
 
     scene street2 with fade
 
@@ -374,8 +374,8 @@ label inSchool:
 
             hide Hikari
             hide Taiju
-            call sportsroom
-            call library
+            call sportsroom from _call_sportsroom
+            call library from _call_library
         "Stay for some time":
             hide Hikari
             hide Taiju
@@ -405,7 +405,7 @@ label inSchool:
             with Dissolve(0.5)
             $ evidence+=1
             
-            call dramaclub
+            call dramaclub from _call_dramaclub
 
         
     return
@@ -611,7 +611,7 @@ label dramaclub:
     scene black with fade
     n "Both goes to Sports room."
     $ evidence+=1
-    call newSports
+    call newSports from _call_newSports
 return
 
 
