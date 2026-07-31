@@ -58,7 +58,7 @@ chronicle/
 
 ## Download
 
-Download from [Itch.io](https:github.com/muin-15/chronicle/releases).
+Download from [Itch.io](https://muinashraf.itch.io/the-chronicle).
 
 ---
 
