@@ -1,76 +1,41 @@
 # Chronicle
 
-Chroncile is a visual novel created using Ren'Py and python.The story line is combination of Detective case solving and the last day of school:the Graduation Ceremony.
+Chronicle is a detective visual novel build using Ren'Py and python.The game starts with two students Taiju and Hikari walking on there way to school for the graduation ceremony.There they come to know the Academic award got stolen.The students correct choices would reveal the mystery.
 
-Chronicle contains three different endings based on how the user solves the case.It takes 30-60 minutes complete the game.
+**Estimated playtime:**30-60 minutes
 
-No use of AI.
-
+![Main Menu](./game/images/screenshots/images.png)
 ---
-
 ## Features
-
-- Detective-style investigation
-- Branching logic
-- Multiple suspects
-- Multiple Endings
-- Multiple character expressions
-
+- Detective storyline
+- Multiple endings
+- Multiple Suspects
+- Short playtime
 ---
-
 ## Screenshots
-
-![First page](./game/images/screenshots/start.png)
-
-![In-Middle](./game/images/screenshots/middle.png)
-
-![Option page](./game/images/screenshots/twist.png)
-
+|Investigation|Choices|
+|-------------|-------|
+|![Investigation](./game/images/screenshots/image.png)|![Choice](./game/images/screenshots/twist.png)|
 ---
-
 ## Controls
-
-|Key|Action|
-|----|------|
-|Left click/space/enter|Next dialogue|
-|Ctrl|Skip Read text|
-|Esc|Open menu|
-|Auto-text|A|
-|Hide Text|H|
-
+|Key|Function|
+|----|--------|
+|Enter/Space bar/Right click|Next dialogue|
+|Ctrl|Skip read text|
+|Esc|Open main menu|
+|A|Auto mode|
+|H|Hide dialogue|
 ---
-
-## Project Structure
-```
-chronicle/
-├─ game/
-│  ├─ images/
-│  ├─ audio/
-│  ├─ gui/
-│  ├─ script.rpy
-│  ├─ options.rpy
-│  ├─ gui.rpy
-│  └─ screens.rpy
-├─ .gitignore
-└─ README.md
-```
----
-
 ## Download
+you can download the game from Itch.io:
 
-Download from [Itch.io](https://muinashraf.itch.io/the-chronicle).
-
+https://muinashraf.itch.io/the-chronicle
 ---
-
 ## Credits
-
-- Scenes:[Noranekogames](https://noranekogames.itch.io/)
-- Scenes:[Itch.io](https://itch.io/queue/c/1958233/classroom-backgrounds?game_id=810438&password=)
-- Sprites:[Tainara](https://tainara-p.itch.io/male-character-sprite-creator)
-- Audio:[Pixabay](https://pixabay.com/music/search/background%20music/)
-
+- Background Scenes: Noraneko games
+- Assests:Itch.io creators
+- Music: Pixabay
+- Character Sprites: Tainara
 ---
-
 ## License
-
-The project is under the [MIT License](LICENSE)
+[MIT](LICENSE)
