@@ -2,7 +2,9 @@
 
 Chronicle is a detective visual novel build using Ren'Py and python.The game starts with two students Taiju and Hikari walking on there way to school for the graduation ceremony.There they come to know the Academic award got stolen.The students correct choices would reveal the mystery.
 
-**Estimated playtime:**30-60 minutes
+No use of Ai.
+
+**Estimated playtime:** 30-60 minutes
 
 ![Main Menu](./game/images/screenshots/images.png)
 ---
@@ -27,9 +29,11 @@ Chronicle is a detective visual novel build using Ren'Py and python.The game sta
 |H|Hide dialogue|
 ---
 ## Download
-you can download the game from Itch.io:
+
+you can download the game from Itch.io.
 
 https://muinashraf.itch.io/the-chronicle
+
 ---
 ## Credits
 - Background Scenes: Noraneko games
