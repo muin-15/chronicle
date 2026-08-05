@@ -44,12 +44,12 @@ https://muinashraf.itch.io/the-chronicle
 3.Now run the game file like double click chronicle.exe for Windows.
 
 ### For Developers
-1.Download the Ren'Py SDK.
+1.Download the [Ren'Py SDK](https://www.renpy.org/).
 
 2.Move chroncile folder to your Ren'Py projects directory.
 
 3.Open Ren'Py laucher,search for chroncile and click 'Lauch project'.
-
+---
 ## Credits
 - Background Scenes: Noraneko games
 - Assests:Itch.io creators
