@@ -35,6 +35,21 @@ you can download the game from Itch.io.
 https://muinashraf.itch.io/the-chronicle
 
 ---
+## How to play
+### For players
+1.First download the zip file of the game from the given link from Itch.io.
+
+2.Then unzip the downloaded zip file.If you won't unzip the file then the game won't run.
+
+3.Now run the game file like double click chronicle.exe for Windows.
+
+### For Developers
+1.Download the Ren'Py SDK.
+
+2.Move chroncile folder to your Ren'Py projects directory.
+
+3.Open Ren'Py laucher,search for chroncile and click 'Lauch project'.
+
 ## Credits
 - Background Scenes: Noraneko games
 - Assests:Itch.io creators
